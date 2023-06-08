@@ -1,0 +1,27 @@
+{
+  "group1": [
+    {
+      "message": "Hello World"
+    },
+    {
+      "message": "hi we are testing"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "password": "mums"
+    },
+    {
+      "id": 3561,
+      "username": "mustafa",
+      "password": "123"
+    },
+    {
+      "id": 6743,
+      "username": "mustafa",
+      "password": "123"
+    }
+  ]
+}

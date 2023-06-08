@@ -4,7 +4,8 @@ import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
 import {router} from './routes/group.js';
-import {userRouter} from './routes/users.js';
+import {userRouter } from './routes/users.js';
+
 
 //konfiguren server
 const app = express();
