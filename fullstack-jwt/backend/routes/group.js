@@ -12,9 +12,20 @@ const db = getDb();
 
 router.get('/', async (req, res) => {
     await db.read();
-    res.status(200).send(db.data.group1);
+    const group = db.data.group1;
+    res.status(200).send(group);
    
 });
 
+router.post('/', async (req, res) => {
+    await db.read();
+    let messages = req.body.message
+    let newMessage ={
+        message: messages
+    }
+    db.data.group1.push(newMessage);
+    await db.write();
+    res.status(200).send(newMessage);
+})
 
 export {router};

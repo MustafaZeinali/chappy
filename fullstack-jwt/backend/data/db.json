@@ -1,12 +1,17 @@
 {
-    "group1":[
-        {
-            "message":"Hello World"
-        }
-    ],
-    "group2":[
-        {
-            "message":"we wre testing"
-        }
-    ]
+  "group1": [
+    {
+      "message": "Hello World"
+    },
+    {
+      "message": "hi we are testing"
+    }
+  ],
+  "users": [
+    {
+      "id" : 1,
+      "name" : "admin" ,
+      "password" : "mums"
+    }
+  ]
 }

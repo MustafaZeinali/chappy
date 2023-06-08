@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
 import {router} from './routes/group.js';
-
+import {userRouter} from './routes/users.js';
 
 //konfiguren server
 const app = express();
@@ -27,8 +27,12 @@ app.use((req, res , next) => {
     res.send()
 });*/
 
+//canal
 app.use('/api/group1', router)
-app.use('/api/group2', router)
+
+//users
+app.use('/api/users', userRouter)
+
 
 //start server
 
