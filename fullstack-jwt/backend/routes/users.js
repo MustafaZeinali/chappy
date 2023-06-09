@@ -96,7 +96,8 @@ userRouter.get('/secret' , async (req , res) => {
         let userIds = decode.userId
         let maybeUserId = Number(userIds)
         let foundUserById = user.find(x => x.id === maybeUserId);
-        console.log(`user ${foundUserById} has acces to secret data`);
+        //let findAdmin = foundUserById(u => u. === maybeUserId)
+        console.log(`user "${foundUserById.name}" has acces to secret data`);
         res.send({
             message: 'this is the secret data, Because you are authenticated'
         })

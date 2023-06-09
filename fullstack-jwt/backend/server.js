@@ -32,7 +32,7 @@ app.use((req, res , next) => {
 app.use('/api/group1', router)
 
 //users
-app.use('/api/users', userRouter)
+app.use('/api/users',authenticateJwt,userRouter)
 
 
 //start server
