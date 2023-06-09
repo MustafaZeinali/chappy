@@ -15,13 +15,9 @@
     },
     {
       "id": 3561,
-      "username": "mustafa",
-      "password": "123"
-    },
-    {
-      "id": 6743,
-      "username": "mustafa",
+      "name": "mustafa",
       "password": "123"
     }
+    
   ]
 }

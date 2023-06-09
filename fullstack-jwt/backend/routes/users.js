@@ -50,7 +50,7 @@ userRouter.post("/login", async (req, res) => {
     const username = req.body.name;
     const password = req.body.password;
 
-    const userfound = user.find((user => user.name === username && user.password === password));
+    const userfound = user.find((user) => user.name === username && user.password === password);
     console.log(userfound);
     if (!userfound){
         res.status(401).send({message: "invalid credentials"});
