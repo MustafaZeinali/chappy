@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-
+import jwt from 'jsonwebtoken';
 import {router} from './routes/group.js';
 import {userRouter } from './routes/users.js';
 
@@ -32,8 +32,8 @@ app.use((req, res , next) => {
 app.use('/api/group1', router)
 
 //users
-app.use('/api/users',authenticateJwt,userRouter)
-
+app.use('/api/users',userRouter)
+// fixa den authenticateJwt//
 
 //start server
 
