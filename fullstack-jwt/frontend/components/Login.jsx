@@ -1,40 +1,56 @@
-
+import './Login.css'
 import { useState } from "react";
 import { loginUsers } from "../../data/loginUsers.js";
-
+//import { LoginContext } from "./Context.jsx";
 const Login = () => {
-    const  [isloggedIn , setIsLoggedIn] = useState(false); 
+    const  [isLoggedIn , setIsLoggedIn] = useState(false); 
     const [username, setUsername] = useState("");
-    const [userPassword, setuserPassword] = useState("");
-    //const [error, setError] = useState("");
+    const [userPassword, setUserPassword] = useState("");
+    
 
     const handleSubmit = (e) => {
-        e.preventDefaolt()
+        e.preventDefault();
     }
-
+    
+    const matchUser = {
+        name : username,
+        password :userPassword,
+       }
    const handleLogin = async () =>{
-    console.log('sís logged in' , isloggedIn);
-    let loginStatus = await loginUsers({name :username , password: userPassword})
-    console.log(loginStatus); 
-    setIsLoggedIn(true)
+  
+    let toLogin = await loginUsers(matchUser)
+
+    if(toLogin !== matchUser){
+        setIsLoggedIn(false)
+        console.log('wrong password or username ');
+        return 
+    }else{
+        setIsLoggedIn(true)
+        console.log('you are logged in');
+    }
+    
+   
+   
+    
    }
+   
 
    const handleLogOut = () =>{
      setIsLoggedIn(false);
    }
 
-   const handlwGetData = async ()  =>{
+   /*const handlwGetData = async ()  =>{
 
     fetch('/secret' , {
         headers: {
             "Authorization": "Bearer: " + tokenjwt
         }
     })
-   } 
+   } */
 
     return(
         <div>
-            {isloggedIn?
+            {isLoggedIn?
              (<div>
                <h2>Log Out</h2>
                <button onClick={handleLogOut}>Log out</button> 
@@ -51,18 +67,18 @@ const Login = () => {
                     <div className="form-div">
                         <label htmlFor="username">username</label>
                         <input id="username"  type="text"  value={username}
-                        onChange={e => setUsername(e.target.value)}
-                            />
+                        onChange={(e) => setUsername(e.target.value)}
+                        autoComplete="current-username"    />
                     </div>
 
                     <div className="form-div">
                         <label htmlFor="password">password</label>
                         <input id="password" type="password" value={userPassword}
-                        onChange={e => setuserPassword(e.target.value)}
-                            />
+                        onChange={(e) => setUserPassword(e.target.value)}
+                        autoComplete="current-password"  />
                     </div>
 
-                    <div>
+                    <div className='btn-login form-div'>
                         <button type="button" className="btn" onClick={handleLogin} >Click</button>
                     </div>
                     </form>

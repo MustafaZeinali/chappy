@@ -1,15 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body {
-	font-family: "Roboto", sans-serif;
-	margin: 0;
-	padding: 1em;
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	background-color: #FAF6BE;
-	font-size: 125%;
-}
+
 body input, body button {
 	font-size: 100%;
 }
@@ -52,6 +43,12 @@ nav li {
 	transition: 0.4s all ease-out;
 	display: flex;
 	
+}
+.koda{
+	display:block;
+	background-color: #F1D67B;
+	cursor: pointer;
+
 }
 nav li.locked a {
 	cursor: not-allowed;

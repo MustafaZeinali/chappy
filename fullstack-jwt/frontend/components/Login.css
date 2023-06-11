@@ -1,0 +1,19 @@
+
+.form-div{
+    box-sizing: border 1px solid black;
+    display: flex;
+    flex-direction: column;
+  
+    padding: 0.2rem;
+    width: 19rem;
+    position: relative;
+    bottom: 29rem;
+    left: 16rem;
+
+}
+.btn-login{
+    padding-top: 0.3rem;
+    display: flex;
+    align-content: center;
+    width: 5rem;
+}

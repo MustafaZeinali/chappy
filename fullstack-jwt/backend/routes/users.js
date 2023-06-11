@@ -56,7 +56,7 @@ userRouter.post("/login", async (req, res) => {
     const userfound = user.find((user) => user.name === username && user.password === password);
     //console.log(userfound);
     if (!userfound){
-        res.status(401).send({message: "invalid credentials"});
+        res.status(401).send({message: "invalid password or username"});
     }else{
     const hour = 60 * 60
     const options = {expiresIn: 2 * hour}
@@ -65,7 +65,7 @@ userRouter.post("/login", async (req, res) => {
     console.log('signed jwt' , token);
     let tokenPackage = {token: token} 
     res.status(200).send(tokenPackage)}
-
+   
 
     /*const err = new Error('Something went wrong');
     Error.captureStackTrace(err);

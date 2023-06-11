@@ -1,15 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body {
-	font-family: "Roboto", sans-serif;
-	margin: 0;
-	padding: 1em;
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	background-color: #FAF6BE;
-	font-size: 125%;
-}
+
 body input, body button {
 	font-size: 100%;
 }
@@ -53,6 +44,20 @@ nav li {
 	display: flex;
 	
 }
+.koda{
+	display:block;
+	background-color: #F1D67B;
+	cursor: pointer;
+    padding: 0.3em;
+/* 	border: 1px solid #A49E44; */
+	transition: 0.4s all ease-out;
+	display: flex;
+    background-color: #F1EFBE; 
+	border: 1px solid darkgray;
+	font-weight: bold;
+    list-style-type: none;
+	padding: 0;
+}
 nav li.locked a {
 	cursor: not-allowed;
 }
@@ -83,6 +88,10 @@ nav .unread {
 
 .chat-area {
 	padding-left: 1em;
+    position: relative;
+    bottom: 30rem;
+    left: 12rem;
+    
 	
 }
 .chat-area > * {
