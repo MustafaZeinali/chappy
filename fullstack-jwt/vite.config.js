@@ -8,9 +8,6 @@ export default defineConfig({
     proxy:{
       "/api" : 'http://localhost:1368'
       
-    },
-    optimizeDeps: {
-      exclude: ['url']
     }
   }
 })

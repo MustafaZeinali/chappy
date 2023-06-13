@@ -20,13 +20,13 @@ const Login = () => {
   
     let toLogin = await loginUsers(matchUser)
 
-    if(toLogin !== matchUser){
+    if(!toLogin.LoggedIn){
         setIsLoggedIn(false)
-        console.log('wrong password or username ');
+        console.log('wrong password or username ', matchUser, toLogin);
         return 
     }else{
         setIsLoggedIn(true)
-        console.log('you are logged in');
+        console.log('you are logged in',toLogin.LoggedIn);
     }
     
    

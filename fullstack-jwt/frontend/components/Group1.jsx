@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../../src/index.css';
-import { text } from 'express';
+
 
 const Group1 = () => {
     // vi kan lägga en variable när den blir lnloggad lås blir olåst

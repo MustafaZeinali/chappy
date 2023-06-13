@@ -2,8 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
-import {router} from './routes/group.js';
-import {userRouter } from './routes/users.js';
+import {router} from './backend/routes/group.js';
+import {userRouter } from './backend/routes/users.js';
 
 
 //konfiguren server
@@ -28,7 +28,7 @@ app.use((req, res , next) => {
     res.send()
 });*/
 
-//canal
+//chanal
 app.use('/api/group1', router)
 
 //users

@@ -8,12 +8,24 @@ function isValidId (p) {
     return maybeId >= 0
 }
 
-function isValidUser (x) {
-    if (!typeof x === 'object') {
+function isValidUser (a) {
+    if (!typeof a === 'object') {
         return false;
-    }else if ( x === null ) {
+    }else if ( a === null ) {
         return false;
     }
 }
 
-export { isValidId , isValidUser};
+function isValidGroup (x) {
+    if (typeof x !== 'object') {
+        return false;
+    }else if ( x === null ) {
+        return false;
+    }
+    let messageIsValid = (typeof x.message) === 'string'
+    messageIsValid = messageIsValid && x.message !== ''
+
+    return true
+}
+
+export { isValidId , isValidUser , isValidGroup};

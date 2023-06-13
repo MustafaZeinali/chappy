@@ -7,7 +7,11 @@
       "message": "hi we are testing"
     },
     {
-      "message": "hi Jag skiriver detta meddelande"
+      "message": "hi Jag skriver detta meddelande"
+    },
+    {
+      "id": 7361,
+      "message": "put funkar"
     }
   ],
   "users": [

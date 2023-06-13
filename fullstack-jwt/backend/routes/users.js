@@ -2,7 +2,7 @@ import express from 'express';
 import { isValidId , isValidUser} from '../database/validation.js';
 import { getDb } from '../database/database.js';
 import jwt from 'jsonwebtoken';
-import {secret} from '../server.js'
+import {secret} from '../../server.js'
 import { router } from './group.js';
 
 const userRouter = express.Router();
@@ -13,6 +13,7 @@ const db = getDb();
 
 userRouter.get('/', async (req, res) => {
     await db.read()
+    const user = db.data.users;
     res.status(200).send(user)
 })
 
@@ -58,13 +59,23 @@ userRouter.post("/login", async (req, res) => {
     if (!userfound){
         res.status(401).send({message: "invalid password or username"});
     }else{
+    
+    function getToken() {
     const hour = 60 * 60
     const options = {expiresIn: 2 * hour}
     const payload = {userId: userfound.id}
     let token = jwt.sign(payload, secret, options)
     console.log('signed jwt' , token);
     let tokenPackage = {token: token} 
-    res.status(200).send(tokenPackage)}
+    console.log('du är inloggad',tokenPackage);
+    
+    return tokenPackage
+   } 
+   const tokenPackage = getToken();
+   res.status(200).send(tokenPackage);
+    //res.status(200).send(tokenPackage)
+    }
+    
    
 
     /*const err = new Error('Something went wrong');

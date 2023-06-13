@@ -13,7 +13,7 @@ async function loginUsers(name, password){
     const response = await fetch (API_URL + 'users/' + 'login', option)
     const statusObject = await response.json()
    // console.log('response from Api: ' , statusObject );
-    return {LoggedIn: statusObject.status}
+    return {LoggedIn: statusObject.token}
 }
 
 export {loginUsers}
