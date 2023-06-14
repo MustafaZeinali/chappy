@@ -1,7 +1,7 @@
 import express from 'express';
 import { getDb } from '../database/database.js';
 import { isValidGroup, isValidId } from '../database/validation.js';
-
+import getToken from './users.js'
 
 const router = express.Router();
 
@@ -15,7 +15,10 @@ router.get('/', async (req, res) => {
     //todo authuzitication , kontrollera headers och token
     await db.read();
     let authorHeader = req.headers.authorization
-    if(!authorHeader){
+    const token = authorHeader.split(' ')[1]
+    const isValidToken = token === getToken();
+    /*let tokenjwt = token.find(tokenForUser => tokenForUser !== getToken)*/
+    if(!authorHeader.startsWith('Bearer ' , getToken) ||!isValidToken) {
         res.status(404).send('Invalid')
         return
     }else{
