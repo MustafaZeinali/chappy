@@ -15,10 +15,12 @@ router.get('/', async (req, res) => {
     //todo authuzitication , kontrollera headers och token
     await db.read();
     let authorHeader = req.headers.authorization
-    const token = authorHeader.split(' ')[1]
+    //const token = authorHeader.split(' ')[1]
+    let token = authorHeader
     const isValidToken = token === getToken();
+    //let limitBearer = !authorHeader.startsWith('Bearer ' )
     /*let tokenjwt = token.find(tokenForUser => tokenForUser !== getToken)*/
-    if(!authorHeader.startsWith('Bearer ' , getToken) ||!isValidToken) {
+    if( !authorHeader ||!isValidToken) {
         res.status(404).send('Invalid')
         return
     }else{

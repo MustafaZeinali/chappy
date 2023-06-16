@@ -1,15 +1,6 @@
 {
   "group1": [
     {
-      "message": "Hello World"
-    },
-    {
-      "message": "hi we are testing"
-    },
-    {
-      "message": "hi Jag skriver detta meddelande"
-    },
-    {
       "id": 7361,
       "message": "put funkar"
     }

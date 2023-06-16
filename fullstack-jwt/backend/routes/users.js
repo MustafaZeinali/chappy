@@ -67,9 +67,12 @@ userRouter.post("/login", async (req, res) => {
            const tokenPackage = getToken(userfound);
            res.status(200).send(tokenPackage);
     }
+    user.push(tokenPackage)
+    await db.write()
 
 
     }
+    
 )
 
 function getToken (userfound){

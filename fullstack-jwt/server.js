@@ -29,7 +29,7 @@ app.use((req, res , next) => {
 });*/
 
 //chanal
-app.use('/api/group1', router)
+app.use('/api/group', router)
 
 //users
 app.use('/api/users',userRouter)
